@@ -8,7 +8,7 @@ $password = $_POST['password'];
 $user_token = $_POST['user_token'];
 
 // Validate login credentials (for example purposes)
-if ($username == "YourName" && $password == "YourStudentID") {
+if ($username == "admin" && $password == "kavindu") {
     // Set session variable
     $_SESSION['user'] = $username;
 
