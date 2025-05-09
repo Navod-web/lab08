@@ -10,7 +10,7 @@ $user_token = $_POST['user_token'];
 // Validate login credentials (for example purposes)
 if ($username == "admin" && $password == "kavindu") {
     // Set session variable
-    $_SESSION['user'] = $username;
+    $_SESSION['admin'] = $username;
 
     // Redirect to welcome page
     header("Location: welcome.php");
