@@ -1,23 +1,15 @@
-<?php
-// process.php
-session_start(); // Start the session
+<?php include 'header.inc'; ?>
+    <h2>Login</h2>
+    <form action="process.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="admin" required><br><br>
 
-// Capture POST data
-$username = $_POST['admin'];
-$password = $_POST['kavindu'];
-$user_token = $_POST['user_token'];
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="kavindu" required><br><br>
 
-// Validate login credentials (for example purposes)
-if ($username == "admin" && $password == "kavindu") {
-    // Set session variable
-    $_SESSION['admin'] = $username;
+        <!-- Hidden field for user token -->
+        <input type="hidden" name="user_token" value="F1234567"><br><br>
 
-    // Redirect to welcome page
-    header("Location: welcome.php");
-    exit();
-} else {
-    // Redirect to login page with error
-    header("Location: login.html?error=invalid");
-    exit();
-}
-?>
+        <input type="submit" value="Login">
+    </form>
+<?php include 'footer.inc'; ?>
