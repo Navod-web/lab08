@@ -3,8 +3,8 @@
 session_start(); // Start the session
 
 // Capture POST data
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_POST['admin'];
+$password = $_POST['kavindu'];
 $user_token = $_POST['user_token'];
 
 // Validate login credentials (for example purposes)
