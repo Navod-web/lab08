@@ -1,15 +1,23 @@
-<?php include 'header.inc'; ?>
-    <h2>Login</h2>
-    <form action="process.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="admin" id="admin" required><br><br>
+<?php
+// Process the login request
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $username = $_POST['admin'];
+    $password = $_POST['kavindu'];
+    $user_token = $_POST['user_token'];
 
-        <label for="password">Password:</label>
-        <input type="text" name="kavindu" id="kavindu" required><br><br>
+    // Expected login credentials
+    $expected_username = 'admin';
+    $expected_password = 'kavindu';
 
-        <!-- Hidden field for user token -->
-        <input type="hidden" name="user_token" value="F1234567"><br><br>
+    // Check if the credentials are correct
+    if ($username === $expected_username && $password === $expected_password) {
+        // Successful login
+        echo "Welcome, $username! You have logged in successfully.";
+    } else {
+        // Invalid login
+        echo "Invalid username or password.";
+    }
+}
+?>
 
-        <input type="submit" value="Login">
-    </form>
-<?php include 'footer.inc'; ?>
